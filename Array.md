@@ -2,7 +2,7 @@
 ## Array.prototype
 `arr.concat(value1[, value2[, ...[, valueN]]])`:数组拼接,返回一个新数组
 
-`arr.copyWithin(target[, start[, end]])`:浅复制数组的一部分到同一数组中的另一个位置，并返回它，不会改变原数组的长度，会**改变原数组。
+`arr.copyWithin(target[, start[, end]])`:浅复制数组的一部分到同一数组中的另一个位置，并返回它，不会改变原数组的长度，会**改变原数组**。
 
 `arr.entries()`: 返回一个数组的迭代器
 
@@ -154,14 +154,3 @@ thisArg可选
 
 ## Array
 `array.isArray(obj)`: obj为需要检测的对象
-
-
-
-
-
-
-
-
-
-
-
