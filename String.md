@@ -74,4 +74,3 @@ str[100] // undefined
 
 `str.raw(callsite, ...substituations)`：模板字符串的标签函数
 
-## Array
