@@ -2,9 +2,11 @@
 ## Array.prototype
 `arr.concat(value1[, value2[, ...[, valueN]]])`:数组拼接,返回一个新数组
 
-`arr.copyWithin(target[, start[, end]])`:浅复制数组的一部分到同一数组中的另一个位置，并返回它，不会改变原数组的长度，会改变原数组。
+`arr.copyWithin(target[, start[, end]])`:浅复制数组的一部分到同一数组中的另一个位置，并返回它，不会改变原数组的长度，会**改变原数组。
 
 `arr.entries()`: 返回一个数组的迭代器
+
+`arr.some(callback(element[, index[, array]])[, thisArg])`: 测试数组中是不是至少有1个元素通过了被提供的函数测试。它返回的是一个Boolean类型的值。找到真值则停止。
 
 `arr.every(callback(element[, index[, array]])[, thisArg])`: 测试一个数组内的所有元素是否都能通过某个指定函数的测试。它返回一个布尔值。
 ```
@@ -22,7 +24,7 @@ thisArg
 如果回调函数的每一次返回都为 truthy 值，返回 true ，否则返回 false。
 ```
 
-`arr.fill(value, start, end)`: 会改变原数组，用一个固定值填充一个数组中从起始索引到终止索引内的全部元素。不包括终止索引，end超过length则不显示。
+`arr.fill(value, start, end)`: **会改变原数组**，用一个固定值填充一个数组中从起始索引到终止索引内的全部元素。不包括终止索引，end超过length则不显示。
 
 `arr.fliter(callback(element[, index[, array]])[, thisArg])`: 创建一个新数组, 其包含通过所提供函数实现的测试的所有元素。返回一个新的、由通过测试的元素组成的数组，如果没有任何数组元素通过测试，则返回空数组。 
 ```
@@ -43,33 +45,6 @@ var filtered = [12, 5, 8, 130, 44].filter(isBigEnough);
 // filtered is [12, 130, 44]
 ```
 
-`arr.find(callback[, thisArg)`: find方法对数组中的每一项元素执行一次 callback 函数，直至有一个 callback 返回 true。当找到了这样一个元素后，该方法会立即返回这个元素的值，否则返回 undefined。
-```
-callback
-在数组每一项上执行的函数，接收 3 个参数：
-  element
-  当前遍历到的元素。
-  index可选
-  当前遍历到的索引。
-  array可选
-  数组本身。
-thisArg可选
-执行回调时用作this 的对象。
-```
-
-`arr.findIndex(callback[, thisArg])`: 返回数组中满足提供的测试函数的第一个元素的索引。若没有找到对应元素则返回-1。
-```
-callback
-针对数组中的每个元素, 都会执行该回调函数, 执行时会自动传入下面三个参数:
-  element
-  当前元素。
-  index
-  当前元素的索引。
-  array
-  调用findIndex的数组。
-thisArg
-可选。执行callback时作为this对象的值.
-```
 `arr.flat([depth])`: depth指定要提取嵌套数组的结构深度，默认值为 1,按照一个可指定的深度递归遍历数组，并将所有元素与遍历到的子数组中的元素合并为一个新数组返回。
 
 `arr.forEach(callback(currentValue [, index [, array]])[, thisArg])`: 对数组的每个元素执行一次给定的函数，返回值undefined。
@@ -100,15 +75,43 @@ thisArg 可选
 可选参数，执行回调函数 mapFn 时 this 对象。
 ```
 
+`arr.find(callback[, thisArg)`: find方法对数组中的每一项元素执行一次 callback 函数，直至有一个 callback 返回 true。当找到了这样一个元素后，该方法会立即返回这个元素的值，否则返回 undefined。
+```
+callback
+在数组每一项上执行的函数，接收 3 个参数：
+  element
+  当前遍历到的元素。
+  index可选
+  当前遍历到的索引。
+  array可选
+  数组本身。
+thisArg可选
+执行回调时用作this 的对象。
+```
+
+`arr.findIndex(callback[, thisArg])`: 返回数组中满足提供的测试函数的第一个元素的索引。若没有找到对应元素则返回-1。
+```
+callback
+针对数组中的每个元素, 都会执行该回调函数, 执行时会自动传入下面三个参数:
+  element
+  当前元素。
+  index
+  当前元素的索引。
+  array
+  调用findIndex的数组。
+thisArg
+可选。执行callback时作为this对象的值.
+```
+
 `arr.includes(valueToFind[, fromIndex])`: 判断一个数组是否包含一个指定的值，根据情况，如果包含则返回 true，否则返回 false。fromIndex为起始位置。0 的值将全部视为相等，与符号无关（即 -0 与 0 和 +0 相等），但 false 不被认为与 0 相等。
 
 `arr.indexOf(searchElement, fromIndex)`: 返回在数组中可以找到一个给定元素的第一个索引，如果不存在，则返回-1。
 
+`arr.lastIndexOf(searchElement, fromIndex)`: 返回最后一个匹配项索引。
+
 `arr.join(separator)`: 将一个数组（或一个类数组对象）的所有元素连接成一个字符串并返回这个字符串。如果数组只有一个项目，那么将返回该项目而不使用分隔符。
 
 `arr.keys()`: 返回一个包含数组中每个索引键的Array Iterator对象，返回索引值数组。
-
-`arr.lastIndexOf(searchElement, fromIndex)`: 返回最后一个匹配项索引。
 
 `arr.map()`: 创建一个新数组，其结果是该数组中的每个元素是调用一次提供的函数后的返回值。
 ```
@@ -142,7 +145,6 @@ thisArg可选
 ```
 如果原数组的某个元素是一个对象的引用（不是实例），那么将拷贝这个对象的引用到新数组中，如果这个引用发生了更改，那么其他的也会发生改变。
 ```
-`arr.some(callback(element[, index[, array]])[, thisArg])`: 测试数组中是不是至少有1个元素通过了被提供的函数测试。它返回的是一个Boolean类型的值。找到真值则停止。
 
 `arr.sort([compareFunction])`: **改变原数组**compareFunction可选，如果省略，则按Unicode排序，如果compareFunction(a,b)<0，那么a将排在b前
 
@@ -151,7 +153,7 @@ thisArg可选
 `arr.toString()`: 返回一个表示数组及其元素的字符串
 
 ## Array
-`arr.isArray(obj)`: obj为需要检测的对象
+`array.isArray(obj)`: obj为需要检测的对象
 
 
 
