@@ -154,3 +154,6 @@ thisArg可选
 
 ## Array
 `array.isArray(obj)`: obj为需要检测的对象
+
+## 类数组和数组
+类数组是具有length属性，其他属性（索引）为非负正数，不具有数组所具有的方法
