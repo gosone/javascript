@@ -5,3 +5,6 @@
 
 ## 双向绑定原理
 https://juejin.cn/post/6844903698166988808
+
+## vue面试总结
+https://juejin.cn/post/6850037277675454478
