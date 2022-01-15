@@ -1,3 +1,22 @@
+## HTTP请求头
+1. Accept：可接受的响应内容类型
+2. Accept-encoding：可接受的编码类型
+3. cookie
+4. referer
+5. host
+6. canche-control
+7. user-agent
+8. range
+
+## HTTP响应头
+1. Access-Control-Allow-Origin
+2. Allow
+3. Expires
+4. set-cookie
+5. Etag
+6. last-Modified
+7. Server
+
 ## HTTP2
 1. 多路复用：可以在一个tcp连接上发送多个请求，在一个tcp连接上有多个流，将要传输的数据分成多个二进制的帧单元，进行标记，还可以设置优先级，服务器端收到后将帧进行组合。
 2. 二进制协议：
