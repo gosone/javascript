@@ -28,20 +28,20 @@
 
 ## Async
  * 表明当前函数是异步函数，不会阻塞线程导致后续代码停止运行
-    Generator 函数的语法糖
-    Async函数返回一个 Promise 对象
-    Async函数内部return语句返回的值，会成为then方法回调函数的参数
-    只有async函数内部的异步操作执行完，才会执行then方法指定的回调函数
-    await 命令
-        **await 下面所有的代码都是异步**
-        如果await后面的不是promise，那么await会阻塞执行，先执行外部的同步代码。
-        如果是promise代码，await 也会阻塞async后面的代码，先执行async外面的同步代码，等着 Promise 对象 fulfilled，然后把 resolve 的参数作为 await 表达式的运算结果。
-        正常情况下，await命令后面是一个 Promise 对象。如果不是，会被转成一个立即resolve的 Promise 对象。
-        只要一个await语句后面的 Promise 变为reject，那么整个async函数都会中断执行
-        错误处理
-            1.这时可以将第一个await放在try...catch结构里面，这样不管这个异步操作是否成功，第二个await都会执行
-            2.await后面的 Promise 对象再跟一个catch方法，处理前面可能出现的错误
-    并发执行
+    - Generator 函数的语法糖
+    - Async函数返回一个 Promise 对象
+    - Async函数内部return语句返回的值，会成为then方法回调函数的参数
+    - 只有async函数内部的异步操作执行完，才会执行then方法指定的回调函数
+ * await 命令 **await 下面所有的代码都是异步**
+    - 如果await后面的不是promise，那么await会阻塞执行，先执行外部的同步代码。
+    - 如果是promise代码，await 也会阻塞async后面的代码，先执行async外面的同步代码，等着 Promise 对象 fulfilled，然后把 resolve 的参数作为 await 表达式的运算结果。
+    - 正常情况下，await命令后面是一个 Promise 对象。如果不是，会被转成一个立即resolve的 Promise 对象。
+    - 只要一个await语句后面的 Promise 变为reject，那么整个async函数都会中断执行
+    - 错误处理
+     1.这时可以将第一个await放在try...catch结构里面，这样不管这个异步操作是否成功，第二个await都会执行
+     2.await后面的 Promise 对象再跟一个catch方法，处理前面可能出现的错误
+    - 并发执行
+    ```
         // 写法一
         let [foo, bar] = await Promise.all([getFoo(), getBar()]);
             // 写法二
@@ -50,6 +50,7 @@
             let foo = await fooPromise;
             let bar = await barPromise;
     实例：按顺序完成异步操作
+    ```
 ## CommonJS和ES6
 1. CommonJS对简单类型是复制操作，复杂类型是浅拷贝。ES6是动态只读引用。
 2. CommonJS中的简单类型的值会被模块缓存。
