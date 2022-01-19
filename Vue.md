@@ -94,3 +94,9 @@ VueX：
 加分回答
 EventBus的优缺点，缺点vue是单页应用，如果你在某一个页面刷新了之后，与之相关的EventBus会被移除，这样就导致业务走不下去。同时如果页面中有反复操作的业务，EventBus在监听的时候就会触发很多次，需要好好处理EventBus在项目中的关系。在vue页面销毁时，同时移除EventBus事件监听。优点，解决了多层组件之间繁琐的事件传播，使用原理十分简单，代码量少。适合业简单，组件传递数据较少的项目，大型项目业务复杂的还是尽量使用VueX
 vuex
+
+
+## vue
+1. vue.use()：（vue.install有同样的效果）全局注册组件，通过Vue.component('ceshi',ceshi)来注册组件，vue.prototype.$tbtoast就是注册一个全局的方法
+2. 
+      
