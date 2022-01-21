@@ -32,7 +32,7 @@
     - Async函数返回一个 Promise 对象
     - Async函数内部return语句返回的值，会成为then方法回调函数的参数
     - 只有async函数内部的异步操作执行完，才会执行then方法指定的回调函数
- * await 命令 **await 会阻塞后面的代码执行**
+ * await 命令 **await 会阻塞后面的代码执行**将后面的同步代码编程异步的微任务
     - 如果await后面的不是promise，那么await会阻塞执行，先执行外部的同步代码。
     - 如果是promise代码，await 也会阻塞async后面的代码，先执行async外面的同步代码，等着 Promise 对象 fulfilled，然后把 resolve 的参数作为 await 表达式的运算结果。
     - 正常情况下，await命令后面是一个 Promise 对象。如果不是，会被转成一个立即resolve的 Promise 对象。
