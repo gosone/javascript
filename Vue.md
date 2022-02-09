@@ -95,7 +95,9 @@ EventBus：
 EventBus的优缺点，缺点vue是单页应用，如果你在某一个页面刷新了之后，与之相关的EventBus会被移除，这样就导致业务走不下去。同时如果页面中有反复操作的业务，EventBus在监听的时候就会触发很多次，需要好好处理EventBus在项目中的关系。在vue页面销毁时，同时移除EventBus事件监听。优点，解决了多层组件之间繁琐的事件传播，使用原理十分简单，代码量少。适合业简单，组件传递数据较少的项目，大型项目业务复杂的还是尽量使用VueX
 
 ## vue
-1. vue.use()：（vue.install有同样的效果）全局注册组件，通过Vue.component('ceshi',ceshi)来注册组件，vue.prototype.$tbtoast就是注册一个全局的方法
-## dom更新和nexttick
+vue.use()：（vue.install有同样的效果）全局注册组件，通过Vue.component('ceshi',ceshi)来注册组件，vue.prototype.$tbtoast就是注册一个全局的方法
+### dom更新和nexttick
 1. Vue 在更新 DOM 时是 异步执行 的。只要侦听到数据变化，Vue 将开启一个队列，并缓冲在同一事件循环中发生的所有数据变更。如果同一个 watcher 被多次触发，只会被推入到队列中一次。这种在缓冲时去除重复数据对于避免不必要的计算和 DOM 操作是非常重要的。然后，在下一个的事件循环“tick”中，Vue 刷新队列并执行实际 (已去重的) 工作。
 2. 官方定义： 在下次 DOM 更新循环结束之后执行延迟回调。在修改数据之后立即使用这个方法，获取更新后的 DOM。
+### vuex
+vuex每次更新，store的数据都会被清空，是因为vuex的
