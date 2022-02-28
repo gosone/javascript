@@ -1,9 +1,9 @@
 ## plugin
-* mini-css-extract-plugin
+* mini-css-extract-plugin：分割csschunk包
 * html-webpack-plugin
-* optimize-css-assets-webpack-plugin
+* optimize-css-assets-webpack-plugin：压缩css代码
 * commonchunckplugin
-* HotModuleReplacementPlugin
+* HotModuleReplacementPlugin：热更新插件
 
 ## 打包流程
 1. 核心概念
