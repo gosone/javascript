@@ -6,6 +6,14 @@
 ## 双向绑定原理
 https://juejin.cn/post/6844903698166988808
 
+## diff算法
+1. diff过程的整体策略：同层比较，深度优先，就近复用
+2. patch方法：用于 比较 新旧节点的不同，然后更新的函数
+* 没有旧节点，说明是页面刚开始初始化的时候 ，此时，根本不需要对比，直接新建
+* 新旧虚拟Dom树的根节点完全一样才会调用patchVnode方法进行打补丁
+* 新旧虚拟Dom树的根节点不一样，直接创建新节点，删除旧节点
+
+
 ## vue-router，前端路由
 hash：通过添加#，比如#address，虽然出现在url中，但是并不会发出http请求。hash改变会触发hashchange事件。
 * 触发hash值的改变：1. a标签，href 2. js，location.hash
@@ -102,6 +110,12 @@ EventBus：
 集中管理项目公共数据，Vuex 的状态存储是响应式的，当 Vue 组件从 store 中读取状态的时候，若 store 中的状态发生变化，那么相应的组件也会相应地得到高效更新。不能直接改变 store 中的状态。改变 store 中的状态的唯一途径就是显式地提交 (commit) mutation。
 7. 加分回答
 EventBus的优缺点，缺点vue是单页应用，如果你在某一个页面刷新了之后，与之相关的EventBus会被移除，这样就导致业务走不下去。同时如果页面中有反复操作的业务，EventBus在监听的时候就会触发很多次，需要好好处理EventBus在项目中的关系。在vue页面销毁时，同时移除EventBus事件监听。优点，解决了多层组件之间繁琐的事件传播，使用原理十分简单，代码量少。适合业简单，组件传递数据较少的项目，大型项目业务复杂的还是尽量使用VueX
+
+## vuex
+
+
+## eventbus
+创建一个vue实例，采用发布订阅模式，基于一个消息中心，进行消息的订阅和发布。
 
 ## vue
 vue.use()：（vue.install有同样的效果）全局注册组件，通过Vue.component('ceshi',ceshi)来注册组件，vue.prototype.$tbtoast就是注册一个全局的方法
