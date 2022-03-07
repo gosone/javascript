@@ -37,11 +37,6 @@ https://juejin.cn/post/6844903698166988808
 ## keep-alive
 被keep-alive包裹的动态组件或router-view会缓存不活动的实例，再次被调用这些被缓存的实例会被再次复用，对于我们的某些不是需要实时更新的页面来说大大减少了性能上的消耗，不需要再次发送HTTP请求，但是同样也存在一个问题就是被keep-alive包裹的组件我们请求获取的数据不会再重新渲染页面
 
-作者：羊烊羴
-链接：https://www.jianshu.com/p/4b55d312d297
-来源：简书
-著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
-
 ## vue-router，前端路由
 hash：通过添加#，比如#address，虽然出现在url中，但是并不会发出http请求。hash改变会触发hashchange事件。
 * 触发hash值的改变：1. a标签，href 2. js，location.hash
