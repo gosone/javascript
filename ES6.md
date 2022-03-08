@@ -15,6 +15,17 @@
 ## 闭包
 能够读取其他函数内部变量的函数叫做闭包。
 
+## 深拷贝
+1. json.stringify(), json.parse()
+2. 弊端
+* 如果obj里面有时间对象，则JSON.stringify后再JSON.parse的结果，时间将只是字符串的形式，而不是对象的形式
+* 如果obj里有RegExp(正则表达式的缩写)、Error对象，则序列化的结果将只得到空对象；
+* 如果obj里有函数，undefined，则序列化的结果会把函数或 undefined丢失；
+* 如果obj里有NaN、Infinity和-Infinity，则序列化的结果会变成null
+3. stringify的使用
+* 比较对象或者数组是否相等
+* 将对象存入localstorage或者sessionstorage中
+
 ## 展开运算符
 * 是浅拷贝
 * 允许迭代器在接收器内部分别展开或扩展
