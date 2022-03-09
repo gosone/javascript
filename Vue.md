@@ -3,6 +3,13 @@
 * V:view 视图
 * VM:data data的劫持 渲染, 数据逻辑处理
 
+## vue3和vue2的区别
+* 不用再必须用一个template标签包起整个组件，一个文本一个标签，多个tempate都可以。支持碎片(Fragments)，就是说在组件可以拥有多个根节点
+* 打包优化
+## vite比webpack快的原因
+* webpack是将文件打包成bundle.js，然后通过html引入。
+* Vite的打包方式，刚刚说了，Vite 是直接把转换后的 es module 的JavaScript代码，扔给 支持es module的浏览器 ，让浏览器自己去加载依赖，也就是把压力丢给了 浏览器 ，从而达到了项目启动速度快的效果。
+* 依赖模块使用强缓存
 ## vue3比vue2快的原因
  ```
 <div>
