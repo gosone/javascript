@@ -22,7 +22,7 @@
 * 如果obj里有RegExp(正则表达式的缩写)、Error对象，则序列化的结果将只得到空对象；
 * 如果obj里有函数，undefined，则序列化的结果会把函数或 undefined丢失；
 * 如果obj里有NaN、Infinity和-Infinity，则序列化的结果会变成null
-3. stringify的使用
+3. json.stringify的使用
 * 比较对象或者数组是否相等
 * 将对象存入localstorage或者sessionstorage中
 
